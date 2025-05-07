@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tienda en Línea</h1>
+        <div class="carrito">
+            <button id="verCarrito" onclick="mostrarCarrito()">Ver Carrito</button>
+            <span id="numCarrito">0</span> productos
+        </div>
+    </header>
+
+    <section id="productos">
+        <div class="producto">
+            <img src="camisa.jpg" alt="Camisa" class="producto-img">
+            <h4>Camisa Azul</h4>
+            <p>$20</p>
+            <button onclick="agregarAlCarrito('Camisa Azul', 20)">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="pantalon.jpg" alt="Pantalón" class="producto-img">
+            <h4>Pantalón Negro</h4>
+            <p>$30</p>
+            <button onclick="agregarAlCarrito('Pantalón Negro', 30)">Agregar al carrito</button>
+        </div>
+        <!-- Agregar más productos aquí -->
+    </section>
+
+    <section id="carrito" style="display:none;">
+        <h2>Carrito de Compras</h2>
+        <ul id="listaCarrito"></ul>
+        <p>Total: $<span id="totalCarrito">0</span></p>
+        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+        <button onclick="finalizarCompra()">Finalizar Compra</button>
+    </section>
+
+    <section id="ticket" style="display:none;">
+        <h2>Ticket de Compra</h2>
+        <ul id="ticketDetalle"></ul>
+        <p>Total: $<span id="totalTicket">0</span></p>
+        <button onclick="volverATienda()">Volver a la tienda</button>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>

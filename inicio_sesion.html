@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión -</title>
+    <style>
+        body {
+            background-color: #4FC3F7;
+            font-family: Arial, sans-serif;
+            color: #4FC3F7;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        h2 {
+            color: #4FC3F7;
+        }
+        form {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #444;
+            border: none;
+            border-radius: 5px;
+            color: #f1f1f1;
+        }
+        button {
+            background-color: #4FC3F7;
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #4FC3F7;
+        }
+        .nav-links {
+            margin-top: 20px;
+        }
+        .nav-links a {
+            color: #4FC3F7;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Inicio de Sesión</h2>
+        <form id="loginForm">
+            <input type="text" id="login_usuario" placeholder="Nombre de Usuario" required>
+            <input type="password" id="login_contraseña" placeholder="Contraseña" required>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+
+        <div class="nav-links">
+            <a href="registro.html">Registrarse</a> 
+        </div>
+    </div>
+
+    <script>
+        function iniciarSesion(event) {
+            event.preventDefault();
+            
+            let nombreUsuario = document.getElementById('login_usuario').value;
+            let contraseña = document.getElementById('login_contraseña').value;
+            let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+            
+            let usuarioEncontrado = usuarios.find(usuario => 
+                usuario.nombre_usuario === nombreUsuario && usuario.contraseña === contraseña
+            );
+            
+            if (usuarioEncontrado) {
+                alert('Inicio de sesión exitoso. ¡Bienvenido ' + nombreUsuario + '!');
+                // Redirigir al link proporcionado
+                window.location.href = 'file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/tienda10.html'; // Reemplazar con el link deseado
+            } else {
+                alert('Usuario o contraseña incorrectos');
+            }
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', iniciarSesion);
+    </script>
+</body>
+</html>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página venta</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0D1117;
+            color: #FFFFFF;
+        }
+        footer {
+            background-color: #161B22;
+            padding: 40px 20px;
+            position: relative;
+        }
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-section {
+            flex: 1 1 200px;
+            padding: 20px;
+        }
+        .footer-section h3 {
+            color: white
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        .footer-section ul li a {
+            color: #C0C0C0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-section ul li a:hover {
+            color: #00FF99;
+        }
+        .network-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: url('ropa.avif') repeat,
+            linear-gradient(135deg, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.1) 75%, transparent 75%, transparent);
+
+            opacity: 0.2;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 0.8em;
+            color: #808080;
+        }
+        .footer-bottom a {
+            color: #00FF99;
+            text-decoration: none;
+        }
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <footer>
+        <div class="network-lines"></div>
+        <div class="container">
+            <div class="footer-section">
+                
+            </div>
+            <div class="footer-section">
+                
+                
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Empresa Roching | <a href="#">Política de privacidad</a> | <a href="#">Términos de servicio</a>
+        </div>
+    </footer>
+
+</body>
+</html>

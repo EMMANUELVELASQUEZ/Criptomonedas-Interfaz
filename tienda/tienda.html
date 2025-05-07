@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head> <html>
+<head>
+<body>
+  <body background bgcolor="blue">
+
+<meta charset="utf-8">
+   <title>Compras</title>
+   <style type="text/css">
+      h1
+      {
+         color: lighcyan;
+         -webkit-text-stroke: 6px yellow; /* prefijo de proveedor */
+         font-size: 600%; /* aumenta el tamaño de la fuente */
+      }
+   </style>
+</head>
+<body>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Ropa y Abarrotes ROCHING</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+    }
+
+    h1 {
+      text-align: center;
+      color: #003366;
+    }
+
+    .productos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .producto {
+      display: inline-block;
+      width: 220px;
+      margin: 15px;
+      text-align: center;
+      border: 2px solid #003366;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #e6f0ff;
+      transition: transform 0.3s;
+    }
+
+    .producto:hover {
+      transform: scale(1.05);
+    }
+
+    .producto img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .producto h4, .producto p {
+      margin: 10px 0;
+      color: #003366;
+    }
+
+    #carrito {
+      position: fixed;
+      top: 25px;
+      right: 3px;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 3px;
+      max-width: 100px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
+
+    #carrito button {
+      background: #4FC3F7;
+      color: white;
+      border: none;
+      padding: 3px;
+      margin-top: 3px;
+      cursor: pointer;
+      border-radius: 1px;
+    }
+
+    #carrito button:hover {
+      background: #00b0ff;
+    }
+
+    .btn {
+      background-color: #0066cc;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+      width: 100%;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #005bb5;
+    }
+
+    /* Estilos para Ofertas y Tickets */
+    .ofertas {
+      text-align: center;
+      margin-top: 40px;
+      background-color: #ffeb3b;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .oferta-item {
+      margin: 10px;
+      padding: 15px;
+      background-color: #ffcc00;
+      border-radius: 8px;
+      display: inline-block;
+      width: 250px;
+      font-weight: bold;
+    }
+
+    .oferta-item h4 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .oferta-item p {
+      font-size: 14px;
+    }
+
+    .ticket {
+      background-color: #ff5722;
+      color: white;
+      padding: 15px;
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Tienda de Ropa y Abarrotes
+  👚👖ROCHING👚👖 </h1>
+<script type="text/javascript">
+    function mostrar_fecha() {
+        var cl = document.getElementById("fecha");
+        cl.innerHTML = new Date();
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Sección de fecha y hora -->
+  <h2>⏳🗓️FECHA - HORA 📅🕒</h2>
+  <div id="fecha"></div>
+  <script type="text/javascript">
+    mostrar_fecha();
+    setInterval(mostrar_fecha, 1000);               
+  </script>
+  <!-- Sección de Ofertas -->
+  <div class="ofertas">
+    <h2>¡Ofertas Especiales!</h2>
+    <div class="oferta-item">
+      <h4>Camisa 50% Off</h4>
+      <p>Solo por hoy, 50% de descuento en todas las camisas.</p>
+    </div>
+    <div class="oferta-item">
+      <h4>Compra 2, Lleva 1</h4>
+      <p>Compra dos pantalones y llévate uno gratis.</p>
+    </div>
+    <div class="oferta-item">
+      <h4>Descuento en Productos de Verano</h4>
+      <p>Hasta un 30% de descuento en todos los vestidos de verano.</p>
+    </div>
+  </div>
+
+  <div class="productos">
+    <h1>👚👖Productos de Ropa👚👖</h1>
+    <div id="productosRopa" class="productos"></div>
+
+    <h1>🍞🍚Productos de Abarrotes🍞🍚</h1>
+    <div id="productosAbarrotes" class="productos"></div>
+  </div>
+
+  <script>
+    const productosRopa = [
+      { nombre: "Camisa", precio: 250, img: "camisa.jpg", tallas: ["S", "M", "L"], genero: "Hombre", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/detalles.html" },
+      { nombre: "Pantalón", precio: 400, img: "pantalon.jpg", tallas: ["30", "32", "34", "36"], genero: "Hombre", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/pantalon.html" },
+      { nombre: "Vestido", precio: 550, img: "vestido.jpeg", tallas: ["S", "M", "L"], genero: "Mujer", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/vestido.html" },
+      { nombre: "Boxer", precio: 236, img: "boxer.jpg", tallas: ["S", "M", "L"], genero: "Hombre", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/boxer.html" },
+      { nombre: "Playera Básica", precio: 199, img: "playera basica.jpeg", tallas: ["S", "M", "L"], genero: "Hombre", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/playera.html" },
+      { nombre: "Jeans Slim Fit", precio: 499, img: "jeans.webp", tallas: ["28", "30", "32", "34", "36"], genero: "Hombre", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/jeans.html" },
+      { nombre: "Vestido de Verano", precio: 599, img: "verano.jpeg", tallas: ["S", "M", "L"], genero: "Mujer", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/verano.html" },
+      { nombre: "Boxer Deportivo", precio: 179, img: "boxerdeportivo.jpeg", tallas: ["S", "M", "L"], genero: "Hombre", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/boxerdeportivo.html" },
+      { nombre: "Sudadera Hoodie", precio: 650, img: "sudadera.jpeg", tallas: ["S", "M", "L", "XL"], genero: "Unisex", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/sudaerahoddi.html" },
+      { nombre: "Short Casual", precio: 320, img: "short.jpeg", tallas: ["S", "M", "L", "XL"], genero: "Unisex", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/shortcasual.html" },
+      { nombre: "Blusa Elegante", precio: 420, img: "blusa.jpeg", tallas: ["S", "M", "L"], genero: "Mujer", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/blusaelegante.html" },
+      { nombre: "Chaqueta de Mezclilla", precio: 850, img: "chaqueta.jpeg", tallas: ["S", "M", "L", "XL"], genero: "Hombre", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/chaqueta.html" },
+      { nombre: "Polo Clásico", precio: 280, img: "polo.jpeg", tallas: ["S", "M", "L"], genero: "Hombre", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/polo.html" },
+      { nombre: "Falda Plisada", precio: 370, img: "Plisada.jpeg", tallas: ["S", "M", "L"], genero: "Mujer", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/faldaplisada.html" },
+      { nombre: "Leggings Deportivos", precio: 310, img: "leggins.jpeg", tallas: ["S", "M", "L"], genero: "Mujer", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/legginsd.html" }
+    ];
+
+    const productosAbarrotes = [
+      { nombre: "Arroz", precio: 40, img: "arroz.webp", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/arroz.html" },
+      { nombre: "Frijol", precio: 35, img: "frijol.jpg", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/frijol.html" },
+      { nombre: "Aceite", precio: 70, img: "aceite.webp", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/aceite.html" },
+      { nombre: "Arroz Integral", precio: 45, img: "integral.jpeg", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/arrozintegral.html" },
+      { nombre: "Frijol Negro", precio: 38, img: "negro.jpeg", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/frijolnegro.html" },
+      { nombre: "Aceite de Oliva", precio: 95, img: "oliva.jpeg", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/aceiteoliva.html" },
+      { nombre: "Azúcar Morena", precio: 32, img: "morena.jpeg", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/morena.html" },
+      { nombre: "Sal de Mesa", precio: 18, img: "mesa.jpeg", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/saldemesa.html" },
+      { nombre: "Harina de Trigo", precio: 50, img: "trigo.jpeg", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/harinadetrigo.html" },
+      { nombre: "Leche Entera", precio: 28, img: "entera.jpeg", detallesUrl: "file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/lecheentera.html" }
+    ];
+
+    let carrito = [];
+
+    function mostrarProductos() {
+      const productosRopaDiv = document.getElementById("productosRopa");
+      productosRopa.forEach(producto => {
+        const div = document.createElement("div");
+        div.className = "producto";
+        div.innerHTML = `
+          <img src="${producto.img}" alt="${producto.nombre}">
+          <h4>${producto.nombre}</h4>
+          <p>$${producto.precio}</p>
+          <p>Género: ${producto.genero}</p>
+          <p>Tallas disponibles: ${producto.tallas.join(', ')}</p>
+          <a href="${producto.detallesUrl}" class="btn">Ver detalles</a>
+          <button class="btn" onclick="agregarAlCarrito('${producto.nombre}', ${producto.precio})">Agregar al carrito</button>
+        `;
+        productosRopaDiv.appendChild(div);
+      });
+
+      const productosAbarrotesDiv = document.getElementById("productosAbarrotes");
+      productosAbarrotes.forEach(producto => {
+        const div = document.createElement("div");
+        div.className = "producto";
+        div.innerHTML = `
+          <img src="${producto.img}" alt="${producto.nombre}">
+          <h4>${producto.nombre}</h4>
+          <p>$${producto.precio}</p>
+          <a href="${producto.detallesUrl}" class="btn">Ver detalles</a>
+          <button class="btn" onclick="agregarAlCarrito('${producto.nombre}', ${producto.precio})">Agregar al carrito</button>
+        `;
+        productosAbarrotesDiv.appendChild(div);
+      });
+    }
+
+    function agregarAlCarrito(nombreProducto, precio) {
+      carrito.push({ nombre: nombreProducto, precio: precio });
+      mostrarCarrito();
+    }
+
+    function mostrarCarrito() {
+      const carritoDiv = document.getElementById("carrito");
+      const lista = carrito.map(producto => `<p>${producto.nombre} - $${producto.precio}</p>`).join('');
+      carritoDiv.innerHTML = `
+        <h3>Carrito</h3>
+        ${lista}
+        <button onclick="finalizarCompra()">Comprar</button>
+        <button onclick="borrarCarrito()">Borrar productos</button>
+      `;
+    }
+
+    function finalizarCompra() {
+      let total = carrito.reduce((sum, producto) => sum + producto.precio, 0);
+      window.location.href = "ticket.html?total=" + total;
+    }
+
+    function borrarCarrito() {
+      carrito = [];
+      mostrarCarrito();
+    }
+
+    mostrarProductos();
+  </script>
+
+  <div id="carrito"></div>
+
+  <!-- Sección de Tickets -->
+  <div class="ticket">
+    <h3>¡Usa el código <span style="font-weight: bold;">SUMMER2025</span> y obtén un 10% de descuento en tu compra!</h3>
+    <p>¡No dejes pasar esta oportunidad!</p>
+  </div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redes Sociales Flotantes</title>
+  <style>
+    /* Estilos generales de la página */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Estilo para los íconos flotantes */
+    .redes {
+      position: fixed; /* Fija los íconos en la pantalla */
+      top: 50%; /* Los centra verticalmente */
+      left: 0; /* Los coloca al lado izquierdo */
+      transform: translateY(-50%); /* Ajusta la posición para que se vean centrados */
+      z-index: 1000; /* Asegura que estén por encima de otros elementos */
+    }
+
+    .redes a {
+      display: block;
+      margin: 10px 0; /* Espacio entre los íconos */
+      transition: transform 0.3s ease; /* Efecto de transición para el hover */
+    }
+
+    .redes a img {
+      width: 50px; /* Tamaño de los íconos */
+      border-radius: 10px; /* Bordes redondeados para los íconos */
+      transition: transform 0.3s ease; /* Efecto de transición para el hover */
+    }
+
+    .redes a:hover img {
+      transform: scale(1.2); /* Aumenta el tamaño del ícono cuando se pasa el mouse */
+    }
+
+    /* Sombra en los íconos para darles un efecto 3D */
+    .redes a img {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="redes">
+    <a href="https://wa.me/4722030716" target="_blank">
+      <img src="WHATASAPP.png" alt="WhatsApp">
+    </a>
+
+    <a href="https://www.facebook.com/share/1AU3yoTYiG/?mibextid=wwXIfr" target="_blank">
+      <img src="facebook.jpg" alt="Facebook">
+    </a>
+
+    <a href="https://instagram.com" target="_blank">
+      <img src="INSTAGRAM.jpeg" alt="Instagram">
+
+        <a href="file:///Users/emmanuelvelasquez/Desktop/Semestre%204%20TIOR/contactos.html" target="_blank">
+      <img src="CONTACTANOS.png" alt="Instagram">
+    </a>
+  </div>
+
+</body>
+</html>
+
+<footer style="background-color: #333; color: white; padding: 20px 0; text-align: center; font-family: Arial, sans-serif;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <p style="font-size: 16px; margin-bottom: 10px;">&copy; 2025 Tienda Mixta Roching - Todos los derechos reservados.</p>
+    <p style="font-size: 14px; opacity: 0.7;">Gracias por confiar en nosotros. Tu satisfacción es nuestra prioridad.</p>
+  </div>
+</footer>

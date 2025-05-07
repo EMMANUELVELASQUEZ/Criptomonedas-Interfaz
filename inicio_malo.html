@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Inicio de Sesión</h2>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Nombre de Usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="button" onclick="iniciarSesion()">Iniciar Sesión</button>
+        <p id="error-message" style="color: red;"></p>
+    </form>
+</div>
+
+<script>
+    // Usuarios de ejemplo (deberían estar almacenados en el servidor)
+    const usuarios = {
+        "usuario1": "contraseña1",
+        "usuario2": "contraseña2"
+    };
+
+    function iniciarSesion() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const errorMessage = document.getElementById('error-message');
+
+        // Verifica si el usuario existe y la contraseña es correcta
+        if (usuarios[username] && usuarios[username] === password) {
+            alert('Inicio de sesión exitoso. ¡Bienvenido, ' + username + '!');
+            errorMessage.textContent = '';
+        } else {
+            errorMessage.textContent = 'Error: Nombre de usuario o contraseña incorrectos.';
+        }
+    }
+</script>
+
+</body>
+</html>

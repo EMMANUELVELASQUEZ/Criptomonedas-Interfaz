@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Criptomonedas</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0D1117;
+            color: #FFFFFF;
+        }
+        header {
+            background: linear-gradient(135deg, #0f0, #00bfff);
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #00FF99;
+        }
+        .submenu {
+            display: none;
+            position: absolute;
+            background-color: #1a1a1a;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        nav ul li:hover .submenu {
+            display: block;
+        }
+        .banner {
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://via.placeholder.com/1600x400/0D1117/FFFFFF?text=Banner+Criptomonedas');
+            background-size: cover;
+            background-position: center;
+        }
+        .banner h2 {
+            font-size: 2em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+
+    function mostrar_fecha( ) {
+        var cl = document.getElementById("fecha");
+        cl.innerHTML = new Date();
+    }
+    </script>
+
+</head>
+<body>
+    <h2>FECHA - HORA </h2>
+    <div id="fecha"></div>
+    <script type="text/javascript">
+    mostrar_fecha();//muestra fecha al cargar
+                   //actualiza cada segundo
+    setInterval(mostrar_fecha, 1000);               
+    </script>
+    <header>
+        <h1> <font size="center" face="arial" color="black">Criptomonedas</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li>
+                    <a href="#">Tipos de Criptomonedas</a>
+                    <div class="submenu">
+                        <a href="#">Bitcoin</a>
+                        <a href="#">Ethereum</a>
+                        <a href="#">Ripple</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Intercambios</a>
+                    <div class="submenu">
+                        <a href="#">Binance</a>
+                        <a href="#">Coinbase</a>
+                        <a href="#">Kraken</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Carteras</a>
+                    <div class="submenu">
+                        <a href="#">Carteras frías</a>
+                        <a href="#">Carteras calientes</a>
+                        <a href="#">Carteras de hardware</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Noticias</a>
+                    <div class="submenu">
+                        <a href="#">Tendencias del mercado</a>
+                        <a href="#">Análisis técnico</a>
+                        <a href="#">Nuevos lanzamientos</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Regulaciones</a>
+                    <div class="submenu">
+                        <a href="#">Leyes locales</a>
+                        <a href="#">Impacto global</a>
+                        <a href="#">Futuro de la regulación</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Inversiones</a>
+                    <div class="submenu">
+                        <a href="#">Estrategias</a>
+                        <a href="#">Consejos</a>
+                        <a href="#">Errores comunes</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Tecnología</a>
+                    <div class="submenu">
+                        <a href="#">Blockchain</a>
+                        <a href="#">Smart Contracts</a>
+                        <a href="#">Seguridad</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Eventos</a>
+                    <div class="submenu">
+                        <a href="#">Conferencias</a>
+                        <a href="#">Talleres</a>
+                        <a href="#">Meetups</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Recursos</a>
+                    <div class="submenu">
+                        <a href="#">Guías</a>
+                        <a href="#">Herramientas</a>
+                        <a href="#">Libros</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Foros</a>
+                    <div class="submenu">
+                        <a href="#">Discusiones</a>
+                        <a href="#">Soporte</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+   <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pestaña de Criptomonedas</title>
+    <style>
+        body {
+            background-color: #0D1117;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            color: #00FF99;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 8px rgba(0, 255, 153, 0.8);
+        }
+        .crypto-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .crypto-card {
+            background-color: #161B22;
+            border-radius: 20px;
+            width: 250px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 4px 10px rgba(0, 255, 153, 0.5);
+        }
+        .crypto-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 15px rgba(0, 255, 153, 0.8);
+        }
+        .crypto-card img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+        .crypto-name {
+            font-size: 1.6em;
+            color: #00FF99;
+            margin-bottom: 10px;
+        }
+        .crypto-description {
+            font-size: 1em;
+            color: #C0C0C0;
+            line-height: 1.5;
+        }
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #00FF99;
+            font-size: 0.9em;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+      
+        <div class="crypto-grid">
+            <a href="https://www.bitcoin.org" target="_blank">
+                <div class="crypto-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png" alt="Bitcoin">
+                    <div class="crypto-name">Bitcoin (BTC)</div>
+                    <div class="crypto-description">La criptomoneda pionera, con tecnología blockchain para transacciones seguras.</div>
+                </div>
+            </a>
+            <a href="https://www.ethereum.org" target="_blank">
+                <div class="crypto-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Ethereum-icon-purple.svg" alt="Ethereum">
+                    <div class="crypto-name">Ethereum (ETH)</div>
+                    <div class="crypto-description">Plataforma descentralizada con contratos inteligentes y aplicaciones.</div>
+                </div>
+            </a>
+            <a href="https://ripple.com/xrp/" target="_blank">
+                <div class="crypto-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/XRP_Logo.svg/800px-XRP_Logo.svg.png" alt="Ripple">
+                    <div class="crypto-name">Ripple (XRP)</div>
+                    <div class="crypto-description">Optimizada para pagos rápidos a nivel internacional con bajo costo.</div>
+                </div>
+            </a>
+            <a href="https://litecoin.org" target="_blank">
+                <div class="crypto-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Litecoin_Logo.svg" alt="Litecoin">
+                    <div class="crypto-name">Litecoin (LTC)</div>
+                    <div class="crypto-description">Una criptomoneda rápida y eficiente con tarifas más bajas que Bitcoin.</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Criptomonedas</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0D1117;
+            color: #FFFFFF;
+        }
+        footer {
+            background-color: #161B22;
+            padding: 40px 20px;
+            position: relative;
+        }
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-section {
+            flex: 1 1 200px;
+            padding: 20px;
+        }
+        .footer-section h3 {
+            color: #00FF99;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        .footer-section ul li a {
+            color: #C0C0C0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-section ul li a:hover {
+            color: #00FF99;
+        }
+        .network-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: url('https://www.transparenttextures.com/patterns/asfalt-light.png') repeat, 
+                        linear-gradient(135deg, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.1) 75%, transparent 75%, transparent);
+            opacity: 0.2;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 0.8em;
+            color: #808080;
+        }
+        .footer-bottom a {
+            color: #00FF99;
+            text-decoration: none;
+        }
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <footer>
+        <div class="network-lines"></div>
+        <div class="container">
+            <div class="footer-section">
+                <h3>Introducción</h3>
+                <ul>
+                    <li><a href="#">Personas</a></li>
+                    <li><a href="#">Empresas</a></li>
+                    <li><a href="#">Desarrolladores</a></li>
+                    <li><a href="#">Cómo empezar</a></li>
+                    <li><a href="#">Whitepaper</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Recursos</h3>
+                <ul>
+                    <li><a href="#">Exchanges</a></li>
+                    <li><a href="#">Comunidad</a></li>
+                    <li><a href="#">Eventos</a></li>
+                    <li><a href="#">Bitcoin Core</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Participe</h3>
+                <ul>
+                    <li><a href="#">Apoya Bitcoin</a></li>
+                    <li><a href="#">Desarrollo</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Other</h3>
+                <ul>
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Acerca de</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Criptomonedas | <a href="#">Política de privacidad</a> | <a href="#">Términos de servicio</a>
+        </div>
+    </footer>
+
+</body>
+</html>
+<footer>
+        <p> Diseñado para una experiencia moderna...🪙🪙🪙</p>
+    </footer>
+</body>
+</html>
+
+

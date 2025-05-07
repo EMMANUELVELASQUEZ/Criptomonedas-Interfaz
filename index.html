@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión - Criptomonedas</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            font-family: Arial, sans-serif;
+            color: #f1f1f1;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        h2 {
+            color: #f39c12;
+        }
+        form {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #444;
+            border: none;
+            border-radius: 5px;
+            color: #f1f1f1;
+        }
+        button {
+            background-color: #f39c12;
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Inicio de Sesión</h2>
+        <form id="loginForm">
+            <input type="text" id="login_usuario" placeholder="Nombre de Usuario" required>
+            <input type="password" id="login_contraseña" placeholder="Contraseña" required>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+
+        <div class="nav-links">
+            <a href="registro.html">Registrarse</a>
+             <a href="registro.html">Politica de privacidad</a>
+        </div>
+    </div>
+
+    <script>
+        function iniciarSesion(event) {
+            event.preventDefault();
+            
+            const nombreUsuario = document.getElementById('login_usuario').value;
+            const contraseña = document.getElementById('login_contraseña').value;
+
+            // Cambia estos valores según tu jefe
+            const usuarioJefe = 'jefe'; // Nombre de usuario del jefe
+            const contraseñaJefe = 'contraseña123'; // Contraseña del jefe
+
+            if (nombreUsuario === usuarioJefe && contraseña === contraseñaJefe) {
+                alert('Inicio de sesión exitoso. ¡Bienvenido Jefe!');
+                window.location.href = 'usuarios.html'; // Redirige a la página de usuarios registrados
+            } else {
+                alert('Usuario o contraseña incorrectos');
+            }
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', iniciarSesion);
+    </script>
+</body>
+</html>

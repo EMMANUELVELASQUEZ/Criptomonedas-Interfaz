@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Cookies</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .cookie-consent {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            bottom: -100px; /* Inicialmente oculto fuera de la vista */
+            left: 0;
+            right: 0;
+            transition: bottom 0.5s ease; /* Animación suave */
+            z-index: 1000;
+        }
+        .cookie-consent.show {
+            bottom: 0; /* Mover a la vista */
+        }
+        .cookie-consent button {
+            background-color: #00bfff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .cookie-consent button:hover {
+            background-color: #0088cc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cookie-consent" id="cookie-consent">
+        <p>Este sitio web utiliza cookies para mejorar su experiencia. ¿Acepta el uso de cookies?</p>
+        <button id="accept-cookies">Aceptar</button>
+        <button id="decline-cookies">No</button>
+    </div>
+
+    <script>
+        // Mostrar el aviso de cookies después de que la página se cargue
+        window.onload = function() {
+            const cookieConsent = document.getElementById('cookie-consent');
+            setTimeout(() => {
+                cookieConsent.classList.add('show');
+            }, 1000); // Mostrar después de 1 segundo
+        }
+
+        document.getElementById('accept-cookies').onclick = function() {
+            document.getElementById('cookie-consent').style.display = 'none'; // Ocultar el aviso
+            // Aquí puedes agregar código para manejar la aceptación de cookies
+        }
+
+        document.getElementById('decline-cookies').onclick = function() {
+            alert('No se aceptaron las cookies.'); // Mensaje de alerta
+            document.getElementById('cookie-consent').style.display = 'none'; // Ocultar el aviso
+            // Aquí puedes agregar código para manejar la negativa a cookies
+        }
+    </script>
+
+</body>
+</html>

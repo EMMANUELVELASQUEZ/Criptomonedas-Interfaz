@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios Registrados</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            font-family: Arial, sans-serif;
+            color: #f1f1f1;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        h2 {
+            color: #f39c12;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #444;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f39c12;
+        }
+        .nav-links {
+            margin-top: 20px;
+        }
+        .nav-links a {
+            color: #f39c12;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Usuarios Registrados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre de Usuario</th>
+                    <th>Correo Electrónico</th>
+                </tr>
+            </thead>
+            <tbody id="usuariosTabla">
+                <!-- Los usuarios se mostrarán aquí -->
+            </tbody>
+        </table>
+
+   
+        </div>
+    </div>
+
+    <script>
+        function mostrarUsuarios() {
+            const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+            const tabla = document.getElementById('usuariosTabla');
+
+            usuarios.forEach((usuario, index) => {
+                const fila = document.createElement('tr');
+                fila.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${usuario.nombre_usuario}</td>
+                    <td>${usuario.correo}</td>
+                `;
+                tabla.appendChild(fila);
+            });
+        }
+
+        // Ejecutar la función para mostrar los usuarios al cargar la página
+        mostrarUsuarios();
+    </script>
+</body>
+</html>
+
