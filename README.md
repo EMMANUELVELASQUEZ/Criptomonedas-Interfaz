@@ -12,19 +12,5 @@
 - **Desarrollos de software que cambiarán tu vida** 🌟
 
 
+<img width="233" alt="image" src="https://github.com/user-attachments/assets/802878d2-d811-46f2-bb77-f792b8a4d552" />
 
-         (
-          )
-         (
-   /\  .-"""-.  /\
-  //\\/  ,,,  \//\\
-  |/\| ,;;;;;, |/\|
-  //\\\;-"""-;///\\
- //  \/   .   \/  \\
-(| ,-_| \ | / |_-, |)
-  //`__\.-.-./__`\\
- //   /   "   \    \\
-(|/   (     )   \ |)
-//  /   /     \   \  \\
-//  /   /       \   \  \\
-(|  /   /         \   \ |)
